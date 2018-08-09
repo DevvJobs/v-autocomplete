@@ -8,6 +8,9 @@
             @blur="blur" @focus="focus" @input="inputChange"
             @keyup.enter="keyEnter" @keydown.tab="keyEnter" 
             @keydown.up="keyUp" @keydown.down="keyDown">
+      <svg class="v-autocomplete-icon"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.09 7.71">
+        <path d="M6.3 7.69A.73.73 0 0 0 6 7.6l-.17-.09L.34 2.06A1.13 1.13 0 0 1 0 1.23 1.26 1.26 0 0 1 .34.36 1.15 1.15 0 0 1 1.18 0 1.21 1.21 0 0 1 2 .36l4.54 4.47L11.05.36A1.16 1.16 0 0 1 11.9 0a1.14 1.14 0 0 1 .84.35 1.15 1.15 0 0 1 .35.85 1.2 1.2 0 0 1-.34.86L7.24 7.49l-.12.07-.12.03-.23.08h-.31z" data-name="COUNTRY EDIT"/>
+      </svg>
     </div>
     <div class="v-autocomplete-list-holder" v-if="show">
       <div class="v-autocomplete-list">
@@ -159,6 +162,15 @@ export default {
 </script>
 
 <style>
+  .v-autocomplete-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 7px;
+    fill: #cfd8dc;
+  }
   .v-autocomplete {
     position: relative;
   }
