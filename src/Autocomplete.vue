@@ -44,7 +44,14 @@ export default {
     inputClass: {type: String, default: 'v-autocomplete-input'},
     disabled: {type: Boolean, default: false},
     inputAttrs: {type: Object, default: () => {return {}}},
-    keepOpen: {type: Boolean, default: false}
+    keepOpen: {type: Boolean, default: false},
+    scrollItemsIntoView: {type: Boolean, default: true},
+    scrollOptions: {
+      type: [Boolean, Object],
+      default: {
+        behavior: "smooth", block: "center", inline: "center"
+      }
+    }
   },
   data () {
     return {
@@ -124,8 +131,8 @@ export default {
     },
 
     itemView (item) {
-      if (item && item.scrollIntoView) {
-        item.scrollIntoView(false)
+      if (item && this.scrollItemsIntoView && item.scrollIntoView) {
+        item.scrollIntoView(this.scrollOptions);
       }
     },
 
